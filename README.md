@@ -2,6 +2,8 @@
 
 ## 📸 Screenshots
 <img src='https://i.hizliresim.com/9efk7u5.png' align='center' width=500>
+<img src='https://i.hizliresim.com/hefjwca.png' align='center' width=500>
+
 
 ## 🚧 Prerequisites
 - [datetime](https://docs.python.org/3/library/datetime.html)
