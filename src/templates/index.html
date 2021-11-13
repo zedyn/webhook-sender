@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block content %}
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    </style>
+    <section class="section has-text-centered">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for flag in messages %}
+                    {% if flag == "success" %}
+                        <article class="message is-success">
+                            <div class="message-header">
+                                <p>Success!</p>
+                                <button class="delete" aria-label="delete" onclick="this.parentElement.style.display='none'"></button>
+                            </div>
+                        </article>
+                    {% elif flag == "error" %}
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Error!</p>
+                                <button class="delete" aria-label="delete" onclick="this.parentElement.style.display='none'"></button>
+                            </div>
+                        </article>
+                    {% elif flag == "wrong_password" %}
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Password incorrect!</p>
+                                <button class="delete" aria-label="delete" onclick="this.parentElement.style.display='none'"></button>
+                            </div>
+                        </article>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h2>
+            <span class="icon-text title">
+                <span class="icon">
+                    <i class="fas fa-code"></i>
+                </span>
+                <span>&nbsp; Your Site Name</span>
+                <hr />
+            </span>
+        </h2>
+        <div class="card is-dark">
+            <div class="card-content">
+                <div class="content">
+                    <form action="/sending"  method="POST">
+    
+                        <div class="field">
+                            <a 
+                            class="github-button" 
+                            href="https://discord.com/users/903318655872422048" 
+                            data-icon="octicon-comment-discussion" 
+                            data-color-scheme="no-preference: light; light: light; dark: dark;"
+                            aria-label="Discord Server"
+                            >Discord @zédyN</a>
+
+                            <a
+                            class="github-button"
+                            href="https://github.com/zedyn"
+                            data-color-scheme="no-preference: light; light: light; dark: dark;"
+                            aria-label="Follow @zedyn on GitHub"
+                            >Follow @zédyN</a>
+                            
+
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input is-discord" type="text" placeholder="Password" required name="password" autofocus="" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <p class="subtitle has-text-discord has-text-left">Message</p>
+                        
+                        <div class="field">
+                            <textarea class="textarea is-discord" placeholder="# Message Content " rows="2" name="content"></textarea>
+                        </div>
+    
+                        <p class="subtitle has-text-discord has-text-left">Embed</p>
+    
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input is-discord" type="color" placeholder="Color" value="#7289da" name="color" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-palette"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input is-discord" type="text" placeholder="Title" name="title" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-heading"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <textarea class="textarea is-discord" placeholder="# Description" rows="2" name="description"></textarea>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input is-discord" type="text" placeholder="Author" name="author" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input is-discord" type="url" placeholder="Image URL" name="image_url" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-image"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input is-discord" type="url" placeholder="Thumbnail URL" name="thumbnail_url" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-file-image"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input is-discord" type="text" placeholder="Footer" name="footer" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-quote-left"></i>
+                                </span>
+                            </p>
+                        </div>
+    
+                        <div class="field">
+                            <button type="submit" class="button is-discord is-outlined is-halfwidth">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-paper-plane"></i>
+                                </span>
+                                <span>Send</span>
+                            </button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
